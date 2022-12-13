@@ -45,7 +45,7 @@ jobs:
       - uses: imranismail/setup-kustomize@v2  
       - run: |
           cd kubernetes
-          kustomize edit set image ${{ secrets.DOCKERHUB_USERNAME }}/argocd:${{ github.sha }}
+          kustomize edit set image argocdimage=${{ secrets.DOCKERHUB_USERNAME }}/argocd:${{ github.sha }}
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           git add .
