@@ -13,5 +13,29 @@ jobs:
         with:
           node-version: '16'
       - run: npm install
+  push_image_on_docker:
+    runs-on: ubuntu-latest
+    needs: install_packages_of_project
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.git }}
+      - name: Build and push latest tag
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/argocd:latest
+      - name: Build and push ${{ github.sha }} tag
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/argocd:${{ github.sha }}
+
 
   
