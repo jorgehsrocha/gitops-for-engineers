@@ -1,5 +1,5 @@
 name: 'Continuous Deployment'
-run-name: 'Deploy to argo cd'
+run-name: 'Push image to docker hub'
 on:
   push:
     branches:
