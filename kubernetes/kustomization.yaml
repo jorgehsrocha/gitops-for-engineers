@@ -6,4 +6,4 @@ resources:
 - service.yaml
 images:
 - name: jorgehsrocha21/argocd
-  newTag: 6bec910378e2307627a5e4e9774ea95590a43694
+  newTag: d4232b19f220562193ea6fa8e4237e880c72e294
