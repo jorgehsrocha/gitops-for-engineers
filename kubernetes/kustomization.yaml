@@ -5,5 +5,8 @@ resources:
 - deployment.yaml
 - service.yaml
 images:
+- name: argocdimage
+  newName: jorgehsrocha21/argocd
+  newTag: f17432c9768bf52092563911b505a467e19d33a9
 - name: jorgehsrocha21/argocd
   newTag: d4232b19f220562193ea6fa8e4237e880c72e294
