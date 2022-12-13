@@ -36,6 +36,17 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/argocd:${{ github.sha }}
-
+  updated_image_from_k8s:
+    runs-on: ubuntu-latest
+    needs: push_image_on_docker
+    steps:
+      - uses: imranismail/setup-kustomize@v2  
+      - run: |
+          kustomize edit set image ${{ secrets.DOCKERHUB_USERNAME }}/argocd:${{ github.sha }}
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add .
+          git commit -m "Set kubernetes image tag to ${{ github.sha }}"
+          git push
 
   

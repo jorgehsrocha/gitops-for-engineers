@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocdnodejs
+spec:
+  selector:
+    matchLabels:
+      app: argocdnodejs
+  template:
+    metadata:
+      labels:
+        app: argocdnodejs
+    spec:
+      containers:
+      - name: argocdnodejs
+        image: argocdimage
+        ports:
+        - containerPort: 3000
