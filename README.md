@@ -46,7 +46,7 @@ Imagine que, em vez de ajustar levemente os valores do balanceador de carga para
 
 Infelizmente, a equipe descobre que esse novo tipo de balanceador de carga é incompatível com alguns outros serviços em seu cluster. O novo balanceador de carga causa falhas de tráfego críticas e interrompe as operações do usuário. Felizmente, como a equipe tem um pipeline completo do GitOps, ela pode desfazer essas alterações no balanceador de carga com rapidez. A equipe vai fazer outra pull request que reverte o repositório para o antigo balanceador de carga funcional conhecido. Essa ação vai ser observada pelo pipeline do GitOps e implementada automaticamente. Assim, a infraestrutura e a pontuação de confiabilidade da equipe vão apresentar uma melhora rápida.
 
-## 4. Vantages de uso
+## 4. Vantagens do uso
 
 O GitOPS é uma forma declarativa que permite equipes a configurarem e entregarem seus projetos aos clientes.
 
