@@ -7,6 +7,6 @@ resources:
 images:
 - name: argocdimage
   newName: jorgehsrocha21/argocd
-  newTag: f17432c9768bf52092563911b505a467e19d33a9
+  newTag: f5286383878e60f6e9406cbe13e041f709ccd57c
 - name: jorgehsrocha21/argocd
   newTag: d4232b19f220562193ea6fa8e4237e880c72e294
